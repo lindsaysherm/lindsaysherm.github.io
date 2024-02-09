@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error-Filled Page</title>
+</head>    
+<body>
+    <h1>Welcome to My Error-Filled Page</h1>
+    
+    <p>This is a paragraph with mismatched tags and missing closing tags.</p>
+    
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+        <li>Item 6</li>
+        <li>Item 7</li>
+        <li>Item 8</li>
+        <li>Item 9</li>
+        <li>Item 10</li>
+    </ol>
+
+    <p>This is another paragraph without proper indentation.</p>
+    
+    <img src="image.jpg" alt="Image">
+
+    <a href="https://www.example.com" target="_blank">Click me!</a>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>Jane</td>
+            <td>30</td>
+        </tr>
+    </table>
+    
+    <img src="error.jpg" alt="Error Image">
+
+    <p style="text-align:center;">This is centered text.</p>
+
+    <p style="background-color:lightgray;">Text</p>
+
+    <input type="button" value="Click me">
+
+    <!-- This is an unclosed comment-->
+
+    <a href="#">Link without closing tag </a>
+
+    <p><u>Underlined text</u></p>
+
+    <dl>
+        <dt>Descriptive Item Title</dt>
+        <dt>Descriptive Item Text</dt>
+    </dl>
+
+    <ol>
+        <li>no meta chatset tag in header, added it in using ! </li>
+        <li>Not set up correctly, html should lead, then head, then body</li>
+        <li>Specify language using "lang", not "language"</li>
+        <li>"Welcome to My Error-Filled Page" heading not closed.</li>
+        <li>The opening p tag for "This is a paragraph with mismatched tags and missing closing tags." was missing.</li>
+        <li>The list starts with an ordered list tag but is closed with an unordered list tag. Switched to both ordered list.</li>
+        <li>"This is another paragraph without proper indentation." had no closing tag.</li>
+        <li>line 28, 'img' is a self closing tag, so "img" is not needed again to close.</li>
+        <li>Image needed an alt attribute.</li>
+        <li>the link should be closed with 'a' tag.</li>
+        <li>Backslash was missing to close out 'td' tag on age 25.</li>
+        <li>The table had no closing, closed it.</li>
+        <li>image is "jpeg", should be "jpg".</li>
+        <li>it should be src instead of "source" for the img</li>
+        <li>"center" tag is incorrect/ not a thing, so I changed it to p tag using style.</li>
+        <li>styling added to background color is incorrect. bgcolor should say background-color</li>
+        <li>in line 50, the opening p tag was missing a carrot.</li>
+        <li>line 56, needed a closing tag</li>
+        <li>Unclosed comment on line 54, closed it.</li>
+        <li>line 58 used the italic tag for underlined text. Changed to "u" tag.</li>
+        <li>"dl" tag is used for description, not list items (li). I changed the tag to match this.</li>
+    </ol>
+</body>
+</html>
