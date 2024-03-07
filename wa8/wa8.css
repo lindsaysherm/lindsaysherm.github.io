@@ -1,0 +1,67 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(146, 174, 157);
+    overflow: hidden; /* keep the yoga icon stays within view */
+}
+nav{
+    height: 50vh;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height:20px;
+    background-color: rgb(59, 84, 69);
+}
+nav a{
+    width:10vw;
+    text-align: center;
+    text-decoration: none;
+    color:rgb(149, 137, 231);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: color 0.3s ease; 
+}
+
+nav a:hover {
+    color: white; /* Change color to white on hover */
+}
+
+
+img{
+    width:40vw;
+    height: 40vh;
+    position: relative;
+    top:50px;
+}
+
+#yoga-icon {
+    position: absolute;
+    top: 80%;
+    left: 0; 
+    animation: moveBackAndForth 10s linear infinite; 
+}
+
+@keyframes moveBackAndForth {
+    0% {
+        transform: translateX(0); /* Start at the left edge */
+    }
+    50% {
+        transform: translateX(calc(100vw - 40px)); /* Move to the right edge */
+    }
+    100% {
+        transform: translateX(0); /* Move back to the left edge */
+    }
+}
+
+#yoga-icon img {
+    width: 50px; 
+    height: 50px;
+    border-radius: 100%; 
+    background-color: rgb(149, 137, 231); 
+}
+
+
+h1, h3 {
+    color: rgb(90, 83, 135); /* Change title text color */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /* Change title font */
+}
