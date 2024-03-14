@@ -1,0 +1,109 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #000;
+    background-color: #FFF;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: #4169E1;
+}
+
+header, footer {
+    background-color: #708090;
+    color: #FFF;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 15px;
+}
+
+section {
+    margin: 20px;
+    padding: 10px;
+}
+
+@media (max-width: 400px) {
+    nav {
+        display: none; /* Consider a collapsible menu for mobile */
+    }
+
+    section {
+        margin: 10px;
+        padding: 5px;
+    }
+}
+
+@media (min-width: 1500px) {
+    body {
+        max-width: 1500px;
+        margin: auto;
+    }
+
+    header, footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav a {
+        margin: 0 30px;
+    }
+
+    section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 20px;
+    }
+
+    section > p, section > h3 {
+        width: 45%;
+    }
+}
+
+/* General Box Styling */
+section {
+    border: 2px solid #4169E1; /* Royal Blue border */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px; /* Rounded corners for the box */
+    position: relative; /* Needed for positioning the button */
+    display: flex;
+    flex-direction: column; /* Stack content vertically by default */
+}
+
+/* Using Flexbox to place Featured Artists and Repertoire side by side */
+.details-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap as needed */
+    justify-content: space-between; /* Distributes space between and around content items */
+}
+
+.featured, .repertoire {
+    flex-basis: 48%; /* Each takes up roughly half the container, allowing for some margin */
+}
+
+/* Button Styling Adjusted */
+.buy-tickets {
+    background-color: #708090; /* Slate Grey */
+    color: white;
+    text-decoration: none; /* Removes underline from links */
+    padding: 10px 20px;
+    border-radius: 5px; /* Rounded corners */
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    transition: background-color 0.3s; /* Smooth background color transition on hover */
+}
+
+.buy-tickets:hover {
+    background-color: #4169E1; /* Changes to Royal Blue on hover */
+}
