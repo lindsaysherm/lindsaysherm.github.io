@@ -1,0 +1,162 @@
+header {
+    background-color: #acd3e2; 
+    color: #FFF;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+
+header h1{
+    font-family: 'Palatino, URW Palladio L, serif,';
+    color: #9b861f; 
+    font-weight: 800
+}
+
+header h2{
+    font-family: 'Palatino, URW Palladio L, serif';
+    color: #1f579b;
+}
+
+header h3 {
+    font-family: 'Palatino, URW Palladio L, serif,';
+    color: #1f579b; 
+    font-style: italic;
+}
+
+header img {
+    width: 150px;
+    height: auto;
+}
+
+body {
+    font-family: 'Palatino, URW Palladio L, serif';
+    color: #1f579b; 
+    background-color: #acd3e2;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #FFF; /* Changing link color to white */
+}
+
+section {
+    border: 8px solid #1f579b;
+    padding: 20px;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 10px;
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+section h2, section h3 {
+    color: #9b861f;
+}
+
+section img {
+    position: absolute;
+    bottom: 10px; 
+    right: 10px; 
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.p1 {
+    font-style: italic;
+    font-weight: bold
+}
+
+.details-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; 
+}
+
+.featured, .repertoire {
+    flex: 1; 
+    margin: 0 10px;
+}
+
+.buy-tickets {
+    background-color: #1f579b;
+    color: #FFF;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    transition: background-color 0.3s;
+}
+
+.buy-tickets:hover {
+    background-color: #9b861f;
+    color: #FFF;
+}
+
+@media (max-width: 400px) {
+    header h1, header h2, header h3 {
+        font-size: 16px; /* Reduce font size for smaller screens */
+    }
+
+    section {
+        flex-direction: column; 
+        padding: 10px;
+        margin: 10px 0; 
+        padding-right: 10px; 
+        padding-bottom: 10px;
+    }
+
+    section img {
+        width: 100px; 
+        height: 100px; 
+        bottom: 5px; 
+        right: 5px;
+    }
+
+    .details-container, .featured, .repertoire {
+        flex-direction: column; 
+        margin: 0;
+    }
+
+    .buy-tickets {
+        position: static; 
+        width: 100%; 
+        margin-bottom: 10px; 
+    }
+}
+
+@media (min-width: 1500px) {
+    header h1, header h2, header h3 {
+        font-size: 24px; /* Increase font size for larger screens */
+    }
+
+    section {
+        flex-direction: row; 
+        padding: 20px; 
+        margin: 20px; 
+    }
+
+    section img {
+        width: 200px; 
+        height: 200px; 
+        bottom: 10px; 
+        right: 10px; 
+    }
+
+    .details-container, .featured, .repertoire {
+        flex-direction: row; 
+        justify-content: space-between; 
+    }
+
+    .buy-tickets {
+        position: absolute; 
+        margin: 0; 
+    }
+}
