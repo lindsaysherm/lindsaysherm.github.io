@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Function start</title>
+    <style>
+      .msgBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 300px;
+        background: #eee;
+        padding: 20px; 
+        box-sizing: border-box;
+      }
+
+      .msgBox p {
+        line-height: 1.5;
+        margin: 20px, 0;
+        padding: 10px 10px;
+        color: #333;
+        padding-left: 60px; /* Adjust this based on icon size!!!! */
+        background-position: 10px center;
+        background-repeat: no-repeat;
+        background-size: 40px 40px; /* Adjust this based on icon size!!!! */
+      }
+
+      .msgBox button {
+        background: none;
+        border: none;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.1rem;
+        color: #aaa;
+      }
+
+    </style>
+  </head>
+  <body>
+    <button>Display message box</button>
+
+
+    <script>
+      function displayMessage(msgText, msgType) {
+    // Select the <body> element
+    const body = document.body;
+  
+    // Create a <div> element for the message box and set its class
+    const panel = document.createElement("div");
+    panel.setAttribute("class", "msgBox");
+    body.appendChild(panel); // Append the panel to the body
+  
+    // Create a <p> element for the message text, set its content, and append it to the panel
+    const msg = document.createElement("p");
+    msg.textContent = msgText; // Customize this message as needed
+    panel.appendChild(msg);
+  
+    // Create a close button, set its text, and append it to the panel
+    const closeBtn = document.createElement("button");
+    closeBtn.textContent = "x"; // Text for the close button
+    panel.appendChild(closeBtn);
+  
+    // Add an event listener to the close button to remove the message box when clicked
+    closeBtn.addEventListener("click", () =>
+      panel.parentNode.removeChild(panel),
+    );
+
+    if (msgType === "warning") {
+    msg.style.backgroundImage = "url(warning.png)";
+    panel.style.backgroundColor = "orange";
+    //change size of both images through padding!
+  } else if (msgType === "chat") {
+    msg.style.backgroundImage = "url(chat.png)";
+    panel.style.backgroundColor = "yellow";
+  } else {
+    msg.style.paddingLeft = "20px";
+  }
+  }
+
+  const btn = document.querySelector("button");
+  
+  function userInput() {
+    let text = prompt("Enter a message!");
+    return(text);
+  }
+
+  function warningInput (){
+    let text = prompt("Is this a warning, or a chat?")
+    return(text);
+  }
+
+
+  btn.addEventListener("click", () => displayMessage(userInput(), warningInput()),
+  );
+      
+    </script>
+  </body>
+</html>

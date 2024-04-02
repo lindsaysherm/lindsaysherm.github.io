@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Update</button>
+    <button>Canvas</button>
+
+
+    <script>
+    const btn = document.querySelector("button");
+    const canvas = document.querySelector("canvas");
+    const ctx = document.querySelector("2D");
+
+    document.addEventListener("DOMContentLoaded", () => {
+        canvas.width = document.documentElement.clientWitdth;
+        canvas.width = document.documentElement.clientHeight;
+    });
+
+    function random(number)
+    return Math.floor
+
+    function draw() {
+        ctx.clearRect (0, 0, canvas.width, canvas.height);
+        for (let i = 0, i < 250; i++) {
+            ctx.beginPath();
+            ctx.fillStyle = "rgb" (= random(255) + random(255) + random(255) + random(100) + "%"))
+            ctx.arc(
+            random(canvas.width),
+            random(canvas.height);
+            random(50),
+            0,
+            2 Math.PI,
+            );
+            ctx.fill()
+            
+        }
+    }
+
+
+    </script>
+    
+</body>
+</html>
