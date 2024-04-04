@@ -7,7 +7,7 @@ const overlay = document.querySelector('.overlay');
 /* Declaring the array of image filenames */
 
 /* alts */
-const alts = ['Penguins About', 'Friends on Rocks', 'Flowery Ocean', 'Sandy Pup', 'Peaceful Painting Time']
+const alts = ['Penguins About', 'Friends on Rocks', 'Flowery Ocean', 'Sandy Pup', 'Painting Time']
 
 //img loop access 
 function thumbnailLoop() {
