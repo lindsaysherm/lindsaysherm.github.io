@@ -1,7 +1,7 @@
 const btn = document.querySelector("#js-new-quote")
 btn.addEventListener('click', getQuote);
 
-const answerBtn = document.querySelector("js-tweet");
+const answerBtn = document.querySelector("#js-tweet");
 answerBtn.addEventListener('click', getAnswer)
 
 const answerText = document.querySelector("#js-answer-text");
