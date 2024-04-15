@@ -1,0 +1,98 @@
+html {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:rgb(239, 222, 222);
+    background-color: #faffbe;
+  }
+  
+  .app {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    background-color: rgb(122, 83, 62);
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+  }
+  
+  header {
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #ebebeb;
+  }
+  
+  .photos {
+    padding: 20px 50px;
+    min-height: 200px;
+  }
+  
+  .photo-display {
+    padding-bottom: 20px;
+    background-size: cover;
+    background-position: center;
+    width: 300px;
+    height: 300px;
+  }
+  
+  .controls {
+    width: 100%;
+    padding: 20px 50px;
+  }
+  
+  .button {
+    display: block;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    margin-bottom: 20px;
+  }
+  
+  .new-photo {
+    background-color: #b190a9;;
+  }
+  
+  .new-photo:hover {
+    background-color: #704c67;
+  }
+  
+  .open-link {
+    background-color: #b2669f;
+    margin-bottom: 15px;
+  }
+  
+  .open-link:hover {
+    background-color: #b03291;
+  }
+  
+  
+  @media screen and (max-width: 600px) {
+    .app {
+      width: 100%;
+    }    .photo-display, .controls {
+      padding: 10px;
+      width: auto;
+  }
+  .button {
+    font-size: 18px;
+  }
+  }
