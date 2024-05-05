@@ -1,24 +1,49 @@
-function generateMaze() {
-    const mazeContainer = document.getElementById('mazeContainer');
-    mazeContainer.innerHTML = ''; // Clear previous maze
-    const volumeLevels = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
-    const blockSize = 30;
+const baseSentences = [
+    "The quick brown fox jumps over the lazy dog.",
+    "Pack my box with five dozen liquor jugs.",
+    "Jackdaws love my big sphinx of quartz.",
+    "How vexingly quick daft zebras jump.",
+    "Bright vixens jump; dozy fowl quack.",
+    "Sphinx of black quartz, judge my vow.",
+    "The five boxing wizards jump quickly.",
+    "Jinxed wizards pluck ivy from the big quilt.",
+    "Crazy Fredrick bought many very exquisite opal jewels.",
+    "The job requires extra pluck and zeal from every young wage earner."
+];
+const challengeSentenceElement = document.getElementById('challengeSentence');
+const inputField = document.getElementById('userInput');
+const volumeDisplay = document.getElementById('volumeDisplay');
+let currentVolume = 0;
+let sentenceIndex = 0;
 
-    volumeLevels.forEach(volume => {
-        const path = document.createElement('div');
-        path.classList.add('maze-path');
-        path.style.width = `${blockSize}px`;
-        path.style.height = `${blockSize}px`;
-        path.style.left = `${Math.floor(Math.random() * 10) * blockSize}px`;
-        path.style.top = `${Math.floor(Math.random() * 10) * blockSize}px`;
-
-        path.addEventListener('mouseover', () => {
-            document.getElementById('volumeDisplay').textContent = volume;
-        });
-
-        mazeContainer.appendChild(path);
-    });
+function generateSentence() {
+    return baseSentences[sentenceIndex % baseSentences.length]; // cycles within the array
 }
 
-generateMaze(); // Initial maze generation
-setInterval(generateMaze, 15000); // Regenerate maze every 15 seconds
+function updateChallenge() {
+    if (sentenceIndex < baseSentences.length) {
+        const newSentence = generateSentence();
+        challengeSentenceElement.textContent = newSentence;
+    } else {
+        challengeSentenceElement.textContent = "Congratulations, you've completed all challenges!";
+        inputField.disabled = true; 
+    }
+}
+
+inputField.addEventListener('input', () => {
+    if (inputField.value === challengeSentenceElement.textContent) {
+        if (currentVolume < 100) {
+            currentVolume += 10;
+            volumeDisplay.textContent = currentVolume + "%";
+            sentenceIndex++; // Increment to get next sentence
+            updateChallenge(); // Update the sentence
+        }
+        inputField.value = "";
+    } else if (!challengeSentenceElement.textContent.startsWith(inputField.value)) {
+        currentVolume = Math.max(0, currentVolume - 10); // Decrease volume by 10% w error
+        volumeDisplay.textContent = currentVolume + "%";
+        inputField.value = ""; 
+    }
+});
+
+updateChallenge(); 
