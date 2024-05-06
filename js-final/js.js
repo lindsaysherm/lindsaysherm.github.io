@@ -34,14 +34,14 @@ inputField.addEventListener('input', () => {
     if (inputField.value === challengeSentenceElement.textContent) {
         if (currentVolume < 100) {
             currentVolume += 10;
-            volumeDisplay.textContent = currentVolume + "%";
+            volumeDisplay.textContent = currentVolume;
             sentenceIndex++; // Increment to get next sentence
             updateChallenge(); // Update the sentence
         }
         inputField.value = "";
     } else if (!challengeSentenceElement.textContent.startsWith(inputField.value)) {
         currentVolume = Math.max(0, currentVolume - 10); // Decrease volume by 10% w error
-        volumeDisplay.textContent = currentVolume + "%";
+        volumeDisplay.textContent = currentVolume;
         inputField.value = ""; 
     }
 });
